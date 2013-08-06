@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<link rel="stylesheet" href="css/xxdl.css" type="text/css" media="screen">
+</head>
+
+<body>
+    <ul class="listwrap" id="J_list"></ul>
+    <div class="refresh" style="display: none;" id="J_more">加载更多</div>
+</body>
+
+<script src="../pub/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="js/xxdl.js" type="text/javascript"></script>
+<script src="js/jquery.pageme.js" type="text/javascript"></script>
+<script type="text/javascript">
+var url = cRequestSign + encodeURI("?Action=82&StockCode=($stockcode)&DeviceType=0&HsString=000&Title=1&scrolltotop=1");
+
+$("#J_list").scrollfresh({
+	url: url, 
+	num: 10,
+	moreid: '#J_more',
+	cfunc: function(data, page, num){
+		var html = '';
+		$.each( data.GRID0, function(index, item){ //data.GRID0[index] == item
+	        var arr = item.replace(/\r|\n/ig, "").split("|");
+	        var title = arr[1].split(" ")[1];
+	        var time = arr[1].split(" ")[0];
+	        var min = time.substr(9).replace(/[\]]/g, "").split(":")[0];
+	        var sec = time.substr(9).replace(/[\]]/g, "").split(":")[1];
+	        time = time.substr(0, 4) + "-" + time.substr(4, 2) + "-" + time.substr(6, 2) + " " + ((min > 10) ? min : ("0" + min) ) + ":" + ((sec > 10) ? sec : ("0" + sec));
+	        html += '<li><a href="detail.htm?id='+ encodeURI(arr[0]) + "&start=" + (page*num+index+1) + '">'  + title + '<span>' + time + '</span></a></li>';
+	    });
+	    $("#J_list").append(html);
+	}
+});
+
+
+</script>
+</html>

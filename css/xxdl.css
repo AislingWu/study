@@ -1,0 +1,45 @@
+@charset "utf-8";
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td, input, table, textarea { margin: 0; padding: 0;}
+table { border-collapse:collapse; border-spacing:0;}
+fieldset, img { border:none;}
+address,caption,cite,code,dfn,em,strong,th,var{ font-style:normal; font-weight:normal;}
+ol, ul, li { list-style:none;}
+caption,th { text-align:left;}
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal;}
+p:before, p:after { content:'';}
+abbr,acronym { border:none;}
+a:hover,a:active { outline:none}
+a,a:link,a:visited,a:active { color:#008bd1;text-decoration:none}
+a { -webkit-transition:color .3s linear;-moz-transition:color .3s linear;-o-transition:color .3s linear; -ms-transition:color .3s linear; transition:color .3s linear; /*-webkit-tap-highlight-color:rgba(0,0,0,0); tap-highlight-color:rgba(0,0,0,0);*/}
+body { background:#1a1a1a; color:#cdcdc5; font-size:16px; font-family: SimSun, "微软雅黑"; -webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-user-select:none; font-family:sans-serif;}
+.listwrap li { position: relative; height: 28px; line-height: 28px; padding: 5px 10px 20px 20px; border-bottom: 1px solid #333; font-size: 17px; color: #ccc; cursor: pointer; text-overflow: ellipsis; white-space:nowrap; overflow: hidden; background: url(../images/infolist_dot.png) no-repeat 3px 11px;}
+.listwrap li a { overflow:hidden; color: #cdcdc5; text-decoration: none;}
+.listwrap li span { position: absolute; bottom: 0px; right: 8px; color: #666; font-size: 14px;}
+
+#essaywrap { width: 96%; padding-bottom: 20px; margin: 0 auto; color: #fefefe;}
+#essaywrap h2 { font-size: 20px; padding: 8px 0 5px 0; line-height: 24px; text-align: center;}
+#essaywrap h3 { font:14px/1.4 SimSun; padding: 0 0 18px 0;text-align: center; color: #cdcdc5; }
+#essaywrap p { margin-bottom: 20px; text-indent: 2em; font: 16px/1.4 SimSun;}
+
+.scrollLoad {
+    position : fixed;
+    bottom : 20px;
+    left: 50%;
+    width : 150px;
+    margin-left : -75px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    background-color:rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 10px 0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/*刷新提示条*/
+/*.refresh{ padding:8px; color:#fff; border-radius:5px; text-align:center; height:auto; background:rgba(0, 0, 0, .5); position:fixed; bottom:60px; z-index:999;}*/
+.refresh{ padding:8px; color:#fff; text-align:center; height:auto; background:rgba(222, 222, 222, .5);}
+
